@@ -1,0 +1,38 @@
+original failed code with the input delay
+
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+        quitting = True
+        delay = 0
+        pygame.qui
+        # return
+        # running = False
+    if event.type == pygame.KEYDOWN:
+        if event.key == K_ESCAPE:
+            quitting = True
+            delay = 0
+            running = False
+    # if pygame.mouse.get_pressed()[0] and mysprite.rect.collidepoint(pygame.mouse.get_pos()):
+    #     print("You have opened a chest!")
+print("quitting :",quitting)
+print("stopping ",delay)
+if delay != 0:
+    time.sleep(delay)
+if zombie.hp > 0:
+    variable = random.randint(zombie.min, zombie.max)
+    variable2 = random.randint(2, 7)
+    guy.health -= variable
+    zombie.hp -= variable2
+    text = font.render(f'Health: {guy.health}', True, (255, 255, 255))
+    text2 = font.render(f'Health: {zombie.hp}', True, (255, 255, 255))
+    text3 = font.render(f'Player took: {variable} damage! '
+                        f'Zombie took {variable2} damage!', True, (255, 255, 255))
+    screen.fill(pygame.Color("blue"), (200, 600, 1000, 400))
+    screen.fill(pygame.Color("blue"), (500, 0, 900, 300))
+    pygame.display.update()
+    screen.blit(text, text_rect)
+    screen.blit(text2, text_rect2)
+    screen.blit(text3, text_rect3)
+pygame.display.update()
+button.process()
+
